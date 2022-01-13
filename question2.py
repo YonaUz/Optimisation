@@ -152,9 +152,6 @@ class Maximisation:
         #pas de valeur négative => optimisation terminee 
         print("\n Optimisation finie: \n") 
         print(self.table)
-        print("pivot={0}".format(self.pivot))
-        print("ligne pivot={0}".format(self.ligne_pivot))
-        print("colonne pivot={0}".format(self.colonne_pivot))
         
         # self.Z=self.table[0,self.nb_variables+2*self.nb_superieur+self.nb_inferieur+self.nb_egal+1]
         # print('Solution Optimale : Z={0}'.format(self.Z))
@@ -194,7 +191,7 @@ class Maximisation:
                     self.table[i,j]=self.table[i,j]-(self.l/self.pivot)*self.table[self.ligne_pivot,j]
         for j in range(self.nb_variables+2*self.nb_superieur+self.nb_inferieur+self.nb_egal+2):
             self.table[self.ligne_pivot,j]=self.table[self.ligne_pivot,j]/self.pivot 
-        print(self.table)
+        print('Transformation: \n',self.table)
         return(self.table)
     
 
