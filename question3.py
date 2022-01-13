@@ -185,9 +185,6 @@ class Maximisation:
         #pas de valeur négative => optimisation terminee 
         print("\n Optimisation finie: \n") 
         print(self.table)
-        print("pivot={0}".format(self.pivot))
-        print("ligne pivot={0}".format(self.ligne_pivot))
-        print("colonne pivot={0}".format(self.colonne_pivot))
         
         self.Z=self.table[0,-1]
 
