@@ -105,9 +105,7 @@ class Maximisation:
             self.ligneprise.insert(len(self.ligneprise),self.ligne_pivot) 
             self.pivot=self.table[self.ligne_pivot,self.colonne_pivot]
             self.table=self.transformation()
-            print("pivot={0}".format(self.pivot))
-            print("ligne pivot={0}".format(self.ligne_pivot))
-            print("colonne pivot={0}".format(self.colonne_pivot)) 
+            
         #pas de valeur négative => optimisation terminee 
         
         print("Optimisation finie: \n") 
@@ -132,6 +130,8 @@ class Maximisation:
                     self.table[i,j]=self.table[i,j]-(self.l/self.pivot)*self.table[self.ligne_pivot,j]
         for j in range(self.nb_contraintes+self.nb_variables+2):
             self.table[self.ligne_pivot,j]=self.table[self.ligne_pivot,j]/self.pivot 
+        
+        print('Transformation: \n',self.table)
         return(self.table)
         
     def FIN(self):
@@ -157,4 +157,6 @@ class Maximisation:
     
 coucou=Maximisation()
 coucou.saisie()
+
+
 
